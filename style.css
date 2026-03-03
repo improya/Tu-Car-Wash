@@ -1,0 +1,92 @@
+:root {
+    --negro-fondo: #0a0a0a;
+    --negro-tarjeta: #141414;
+    --azul-premium: #3498db;
+    --dorado: #d4af37;
+    --blanco: #ffffff;
+}
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body { background-color: var(--negro-fondo); color: var(--blanco); }
+
+/* Navegación */
+nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 15px 8%; background: rgba(0,0,0,0.95);
+    position: fixed; width: 100%; z-index: 1000;
+    border-bottom: 1px solid var(--dorado);
+}
+
+.logo { font-weight: bold; font-size: 1.4rem; color: var(--azul-premium); }
+.logo span { color: var(--blanco); }
+
+nav ul { display: flex; list-style: none; }
+nav ul li a { color: var(--blanco); text-decoration: none; margin-left: 20px; font-size: 0.9rem; }
+.btn-nav { background: var(--azul-premium); padding: 8px 15px; border-radius: 5px; }
+
+/* Hero */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
+                url('https://images.unsplash.com/photo-1605153322277-dd0d7f608b4d?q=80&w=2000');
+    background-size: cover; background-position: center;
+    display: flex; justify-content: center; align-items: center; text-align: center;
+}
+
+.hero h1 { font-size: 4.5rem; letter-spacing: 8px; }
+.eslogan { color: var(--dorado); font-size: 1.8rem; font-style: italic; margin: 10px 0; }
+.btn-primary { 
+    margin-top: 30px; display: inline-block; padding: 15px 40px; 
+    background: transparent; border: 2px solid var(--dorado); 
+    color: var(--dorado); text-decoration: none; transition: 0.3s;
+}
+.btn-primary:hover { background: var(--dorado); color: black; box-shadow: 0 0 20px var(--dorado); }
+
+/* Servicios y Cards */
+.servicios { padding: 100px 8%; text-align: center; }
+.gold { color: var(--dorado); }
+.cards-container { 
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); 
+    gap: 25px; margin-top: 50px; 
+}
+
+.card { 
+    background: var(--negro-tarjeta); padding: 30px; border-radius: 12px; 
+    transition: 0.3s; position: relative;
+}
+.card:hover { transform: translateY(-10px); }
+.badge { background: var(--azul-premium); width: 35px; height: 35px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; font-weight: bold; }
+.gold-bg { background: var(--dorado); color: black; }
+
+.card ul { list-style: none; text-align: left; font-size: 0.85rem; line-height: 1.8; color: #ccc; }
+.border-blue { border-top: 4px solid var(--azul-premium); }
+.border-gold { border-top: 4px solid var(--dorado); }
+.premium-card { border: 1px solid var(--dorado); }
+
+/* Especialidades */
+.grid-especial { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 40px 8%; }
+.box-premium { background: #111; padding: 30px; border-radius: 15px; border: 1px solid #333; }
+.highlight-gold { border-color: var(--dorado); }
+.precio-item { display: flex; justify-content: space-between; margin: 15px 0; font-size: 1.1rem; }
+.precio-item span { color: var(--dorado); font-weight: bold; }
+
+/* Publicidad / Próximamente */
+.publicidad { padding: 80px 8%; }
+.banner-proximamente { 
+    height: 250px; background: #111; border-radius: 20px; 
+    display: flex; justify-content: center; align-items: center; 
+    border: 1px dashed var(--dorado); text-align: center;
+}
+.tag { background: var(--dorado); color: black; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: bold; }
+.loading-bar { width: 150px; height: 3px; background: #333; margin: 15px auto; }
+.progress { width: 60%; height: 100%; background: var(--dorado); animation: shine 2s infinite; }
+
+@keyframes shine { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+
+footer { padding: 40px; text-align: center; border-top: 1px solid #222; font-size: 0.8rem; }
